@@ -1,0 +1,139 @@
+[1mdiff --git a/bin/LikedList/LinkedList.class b/bin/LikedList/LinkedList.class[m
+[1mdeleted file mode 100644[m
+[1mindex 2fd74fa..0000000[m
+Binary files a/bin/LikedList/LinkedList.class and /dev/null differ
+[1mdiff --git a/bin/LikedList/Node.class b/bin/LikedList/Node.class[m
+[1mdeleted file mode 100644[m
+[1mindex 19f0b1d..0000000[m
+Binary files a/bin/LikedList/Node.class and /dev/null differ
+[1mdiff --git a/bin/Main.class b/bin/Main.class[m
+[1mindex f85831b..9899ed7 100644[m
+Binary files a/bin/Main.class and b/bin/Main.class differ
+[1mdiff --git a/src/LikedList/LinkedList.java b/src/LikedList/LinkedList.java[m
+[1mdeleted file mode 100644[m
+[1mindex e6f2eed..0000000[m
+[1m--- a/src/LikedList/LinkedList.java[m
+[1m+++ /dev/null[m
+[36m@@ -1,93 +0,0 @@[m
+[31m-package LikedList;[m
+[31m-[m
+[31m-public class LinkedList {[m
+[31m-	Node Head,Tail=null;[m
+[31m-	int size=0;[m
+[31m-	[m
+[31m-	/*Add Node at last position*/[m
+[31m-	public void Append(Object val) {[m
+[31m-		Node newNode=new Node(val); [m
+[31m-		// make it the head and tail in case the linked list is empty[m
+[31m-		if(size==0) {[m
+[31m-			Head=Tail=newNode;[m
+[31m-			size++;[m
+[31m-			return;[m
+[31m-		}[m
+[31m-		Tail.next=newNode;[m
+[31m-		Tail=newNode;[m
+[31m-		newNode=null; // to let jvm to remove it at the run time[m
+[31m-		size++;[m
+[31m-	}[m
+[31m-	/*Get LinkedList size*/[m
+[31m-	public int Length() {[m
+[31m-		return size;[m
+[31m-	}[m
+[31m-	/*Get element at a specific position*/[m
+[31m-	public Object At(int indx) {[m
+[31m-		assert indx>=0&&indx<size:" Not valid"; // index out the range[m
+[31m-		Node tmp=Head;[m
+[31m-		for(int i=0;i<indx;i++) {[m
+[31m-			tmp=tmp.next;[m
+[31m-		}[m
+[31m-		[m
+[31m-		return tmp.data;[m
+[31m-	}[m
+[31m-	/*add element at a specific position*/[m
+[31m-	public void InsertAt(Object val,int indx) {[m
+[31m-		assert(indx>=0&&indx<=size); //index out the range[m
+[31m-		[m
+[31m-		Node tmp=Head;[m
+[31m-		Node newNode= new Node(val);[m
+[31m-		// add it at first position in case the linkedList is empty[m
+[31m-		if(indx==0) {[m
+[31m-			newNode.next=Head;[m
+[31m-			Head=newNode;[m
+[31m-		}[m
+[31m-		// call append function if we need to add element at last position[m
+[31m-		else if(indx==size) {[m
+[31m-			Append(val);[m
+[31m-		}[m
+[31m-		[m
+[31m-		else {[m
+[31m-		for(int i=0;i<indx-1;i++) {[m
+[31m-			tmp=tmp.next;[m
+[31m-			}[m
+[31m-		newNode.next=tmp.next;[m
+[31m-		tmp.next=newNode;[m
+[31m-		}[m
+[31m-		size++;[m
+[31m-	}[m
+[31m-	/*Delete an element at a specific position */[m
+[31m-	public void DeleteAt(int indx) {[m
+[31m-		assert(indx>=0&&indx<size);[m
+[31m-		size--;[m
+[31m-		Node tmp=Head;[m
+[31m-		// if we need to remove the head make the head the next element[m
+[31m-		if(indx==0) {[m
+[31m-			Head=tmp.next;[m
+[31m-			// if LinkedList has one node only  make the tail also null[m
+[31m-			if(size==1) Tail=null;[m
+[31m-			tmp=null;[m
+[31m-			return;[m
+[31m-		}[m
+[31m-		for(int i=0;i<indx-1;i++) {[m
+[31m-			tmp=tmp.next;[m
+[31m-		}[m
+[31m-		Node delete=tmp.next;[m
+[31m-		tmp.next=delete.next;[m
+[31m-		// if we need to delete the tail make the previous element the tail[m
+[31m-		if(delete.next==null)Tail=tmp;[m
+[31m-		delete=tmp=null;[m
+[31m-	}[m
+[31m-	/*delete all elements from the LinkedList*/[m
+[31m-	public void clear() {[m
+[31m-		Node tmp=Head;[m
+[31m-		while(tmp!=null) {[m
+[31m-			DeleteAt(0);[m
+[31m-			tmp=tmp.next;[m
+[31m-		}[m
+[31m-		size=0;[m
+[31m-	}[m
+[31m-	[m
+[31m-[m
+[31m-}[m
+[1mdiff --git a/src/LikedList/Node.java b/src/LikedList/Node.java[m
+[1mdeleted file mode 100644[m
+[1mindex af39789..0000000[m
+[1m--- a/src/LikedList/Node.java[m
+[1m+++ /dev/null[m
+[36m@@ -1,13 +0,0 @@[m
+[31m-package LikedList;[m
+[31m-[m
+[31m-public class Node {[m
+[31m-	public Object data;[m
+[31m-	public Node next;[m
+[31m-	public Node() {next=null;}[m
+[31m-	public Node(Object Val) {[m
+[31m-		data=Val;[m
+[31m-		next=null;[m
+[31m-	}[m
+[31m-	[m
+[31m-	[m
+[31m-}[m
+[1mdiff --git a/src/Main.java b/src/Main.java[m
+[1mindex 3ec0c95..99b7f5b 100644[m
+[1m--- a/src/Main.java[m
+[1m+++ b/src/Main.java[m
+[36m@@ -1,4 +1,4 @@[m
+[31m-import LikedList.LinkedList;[m
+[32m+[m[32mimport LinkedList.LinkedList;[m
+ public class Main {[m
+ [m
+ 	public static void main(String[] args) {[m

@@ -1,4 +1,4 @@
-package LikedList;
+package LinkedList;
 
 public class Node {
 	public Object data;
