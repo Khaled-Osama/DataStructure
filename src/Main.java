@@ -1,5 +1,6 @@
 import LinkedList.LinkedList;
-import Stack.Stack;;
+import Stack.Stack;
+import QueueImplementation.Queue;
 public class Main {
 
 	public static void main(String[] args) {
@@ -29,6 +30,24 @@ public class Main {
 		System.out.println(stk.top());
 		stk.pop();
 		System.out.println(stk.top());
+		
+		
+		
+		/*Test Queue*/
+		System.out.println("Queue Tests");
+		Queue queue=new Queue(5);
+		queue.push(3);
+		queue.push(6);
+		queue.push(7);
+		System.out.println(queue.empty());
+		System.out.println(queue.top());
+		queue.pop();
+		System.out.println(queue.top());
+		queue.pop();
+		System.out.println(queue.top());
+		queue.pop();
+		System.out.println(queue.top());
+		System.out.println(queue.empty());
 		
 	}
 
