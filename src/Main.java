@@ -1,6 +1,7 @@
 import LinkedList.LinkedList;
 import Stack.Stack;
 import QueueImplementation.Queue;
+import BinaryTree.BinaryTree;
 public class Main {
 
 	public static void main(String[] args) {
@@ -46,8 +47,27 @@ public class Main {
 		queue.pop();
 		System.out.println(queue.top());
 		queue.pop();
-		System.out.println(queue.top());
+
 		System.out.println(queue.empty());
+		
+		/*Test Binary Tree*/
+		System.out.println("Testing Binary Tree \n\n");
+		BinaryTree tree=new BinaryTree();
+		tree.addNode(5);
+		tree.addNode(8);
+		tree.addNode(6);
+		tree.addNode(9);
+		tree.addNode(7);
+		tree.addNode(10);
+		
+		System.out.println("Val 11 exist or not ?"+tree.exist(11));
+		System.out.println("Val 9 exist or not ?"+tree.exist(9));
+		System.out.println("Val 8 exist or not ?"+tree.exist(8));
+		System.out.println("Print tree sorted in ascending Order");
+		tree.inOrder();
+		System.out.println("\nPrint tree sorted in ascending Order");
+		tree.postOrder();
+		
 		
 	}
 
