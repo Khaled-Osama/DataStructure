@@ -1,6 +1,6 @@
 package BinaryTree;
 
-public class Node {
+ public class Node {
 	public int val;
 	public Node leftChild;
 	public Node rightChild;

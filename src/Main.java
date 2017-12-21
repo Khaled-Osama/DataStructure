@@ -2,6 +2,7 @@ import LinkedList.LinkedList;
 import Stack.Stack;
 import QueueImplementation.Queue;
 import BinaryTree.BinaryTree;
+import AVLTree.AVLTree;
 public class Main {
 
 	public static void main(String[] args) {
@@ -67,8 +68,17 @@ public class Main {
 		tree.inOrder();
 		System.out.println("\nPrint tree sorted in ascending Order");
 		tree.postOrder();
-		
-		
+		/*AVL Tree*/
+		System.out.println("\n\nTesting AVL Tree \n\n");
+		AVLTree avl=new AVLTree();
+		avl.insert(15);
+		avl.insert(10);
+		avl.insert(8);
+		avl.insert(19);
+		System.out.println("Val 15 exist or not ?"+avl.exist(15));
+		System.out.println("Val 8 exist or not ?"+avl.exist(8));
+		System.out.println("Val 19 exist or not ?"+avl.exist(19));
+		System.out.println("Val 20 exist or not ?"+avl.exist(20));
 	}
 
 }
