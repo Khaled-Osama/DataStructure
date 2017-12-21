@@ -63,22 +63,22 @@ public class AVLTree {
 	public void balance(Node curr) {
 		if(curr.bf==2) {
 			/*
-			 * 			O
+			 * 		    O
 			 * 		   /
 			 * 		  O
 			 * 		   \
-			 * 			O
+			 * 		    O
 			 * in this case the left branch is larger than the right branch by 2
 			 * but we need to rotate the left branch left first to make the tree as the following
 			 * 
-			 * 			O
-			 * 		   /
+			 * 	    O
+			 *         /
 			 *        O
 			 *       /
 			 *      O
 			 * 	then rotate the tree right to become
 			 * 
-			 * 			 O
+			 * 		     O
 			 *		   /   \
 			 *		  O     O
 			 * */
