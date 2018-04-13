@@ -65,9 +65,6 @@ public class Queue {
 		return arr[front];
 		
 	}
-	// the destructor will let jvm to damage the array and restore our memory space that the arr takes
-	public Queue() {
-		arr=null;
-	}
+	
 
 }
