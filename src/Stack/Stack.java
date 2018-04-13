@@ -1,8 +1,8 @@
 package Stack;
 /*
  * stack is a data structure that implement a last input first output rule 
- * if we put book on another and we have more about 5 books
- * when we need the bottom book that is put first we need to remove four books that are put after
+ * if we put book on another and we have about 5 books
+ * when we need the bottom book that was put first we need to remove four books that were put after
  * it so we called it as first in last output
  * 
  * */
